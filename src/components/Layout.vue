@@ -29,7 +29,9 @@
         <mu-row :column="1">
           <mu-col width="100" tablet="100" desktop="100">
             <mu-sub-header>
-              仪表盘
+                <li class="index" v-for="(item, index) in banners" :key="index">
+                <img :src="item.imgUrl">
+                </li>
             </mu-sub-header>
           </mu-col>
         </mu-row>
@@ -37,6 +39,18 @@
     </mu-row>
   </section>
 </template>
+<script>
+import luan from './../assets/luan.jpg'
+export default {
+data(){
+        return{
+          banners: [
+              { imgUrl: luan },
+          ],
+        }
+    }
+}
+</script>
 
 <style scoped>
   @import "../css/index.css";
